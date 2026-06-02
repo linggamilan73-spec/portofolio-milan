@@ -36,7 +36,8 @@
             <a href="https://www.linkedin.com/in/lingga-milan-sudrajat-58a277381" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
             <a href="https://www.instagram.com/mil.an976/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
             <a href="https://wa.me/6281385088094" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-            <a href="mailto:linggamilan73@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+            <button class="social-copy" onclick="copyEmail()"><i class="fas fa-envelope"></i> Email</button>
+            <a href="assets/CV - Lingga Milan Sudrajat.pdf.jpg" target="_blank"><i class="fas fa-file-alt"></i> CV</a>
         </div>
     </section>
 
@@ -79,6 +80,39 @@
             <div class="folder"><a href="https://drive.google.com/drive/folders/1YLdQ8gjCXhGDbIRwv_2iCzhyZ1ggxXvV?usp=sharing" target="_blank">&#x1F50C; Fiber Optic</a></div>
             <div class="folder"><a href="https://drive.google.com/drive/folders/1J2r1D7WxvVdit1a-6BDbzlSc7wDYpevf?usp=sharing" target="_blank">&#x1F4CB; Projek Mandiri</a></div>
         </div>
+
+        <div class="project-cards">
+            <div class="project-card">
+                <div class="project-thumb">
+                    <img src="assets/bandit.png" alt="Bandit OverTheWire">
+                </div>
+                <div class="project-info">
+                    <h3>Writeup Bandit OverTheWire Level 0 - Level 10</h3>
+                    <a href="https://medium.com/@linggamilan73/writeup-bandit-overthewire-level-0-sampai-level-33-784485febef6" target="_blank" class="project-link">Lihat Disini</a>
+                    <p>Write-up lengkap Bandit OverTheWire dari level 0 hingga level 33 — mencakup teknik dasar Linux, navigasi file, manipulasi permission, SSH, dan berbagai challenge keamanan sistem.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-thumb" style="background: linear-gradient(135deg, #1a1a2e, #16213e); display:flex; align-items:center; justify-content:center; height:180px; font-size:60px;">
+                    🖥️
+                </div>
+                <div class="project-info">
+                    <h3>Pentest Active Directory from tryhackme</h3>
+                    <a href="https://medium.com/@linggamilan73/tryhackme-attacktive-directory-write-up-8425119ba4c3" target="_blank" class="project-link">Lihat Disini</a>
+                    <p>Write-up TryHackMe Attacktive Directory — simulasi penetration testing pada Active Directory menggunakan teknik enumeration, Kerberoasting, dan privilege escalation.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-thumb">
+                    <img src="assets/Android Static Analysis PT.Pos Indonesia.png" alt="Android Static Analysis PT Pos Indonesia">
+                </div>
+                <div class="project-info">
+                    <h3>Android Static Analysis — Fake PT Pos Indonesia (Red Team)</h3>
+                    <a href="https://medium.com/@linggamilan73/android-static-analysis-fake-pt-pos-indonesia-red-team-ecd3cad14863" target="_blank" class="project-link">Lihat Disini</a>
+                    <p>Analisis statis APK palsu yang menyamar sebagai PT Pos Indonesia — reverse engineering, identifikasi malware, dan teknik red team.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="organisasi">
@@ -117,34 +151,72 @@
 
     <section id="sertifikat">
         <h2>Sertifikat</h2>
-        <div class="cert-grid">
-            <div class="cert-card">
-                <img src="assets/cyber security pentesting.png" alt="Cyber Security Pentesting">
-                <p>Cyber Security Penetration Testing</p>
-            </div>
-            <div class="cert-card">
-                <img src="assets/Cybersecurity Essentials.png" alt="Cybersecurity Essentials">
-                <p>Cybersecurity Essentials</p>
-            </div>
-            <div class="cert-card">
-                <img src="assets/introduction to cyber.png" alt="Introduction to Cyber">
-                <p>Introduction to Cyber Security</p>
-            </div>
-            <div class="cert-card">
-                <img src="assets/linux fundamental.png" alt="Linux Fundamental">
-                <p>Linux Fundamental</p>
-            </div>
-            <div class="cert-card">
-                <img src="assets/system administration II.png" alt="System Administration II">
-                <p>System Administration II</p>
-            </div>
-            <div class="cert-card">
-                <img src="assets/CCSC.png" alt="CCSC">
-                <p>CCSC</p>
-            </div>
-            <div class="cert-card">
-                <img src="assets/crypthodraphy.jpg" alt="Cryptography">
-                <p>Cryptography</p>
+        <div class="cert-slider">
+            <div class="cert-track">
+                <div class="cert-card">
+                    <img src="assets/sertifikat/cyber security pentesting.png" alt="Cyber Security Pentesting">
+                    <p>Cyber Security Penetration Testing</p>
+                </div>
+                <div class="cert-card">
+                    <img src="assets/sertifikat/Cybersecurity Essentials.png" alt="Cybersecurity Essentials">
+                    <p>Cybersecurity Essentials</p>
+                </div>
+                <div class="cert-card">
+                    <img src="assets/sertifikat/introduction to cyber.png" alt="Introduction to Cyber">
+                    <p>Introduction to Cyber Security</p>
+                </div>
+                <div class="cert-card">
+                    <img src="assets/sertifikat/Linux Fundamental.png" alt="Linux Fundamental">
+                    <p>Linux Fundamental</p>
+                </div>
+                <div class="cert-card">
+                    <img src="assets/sertifikat/linux fundamental.png" alt="Linux Fundamental 2">
+                    <p>Linux Fundamental</p>
+                </div>
+                <div class="cert-card">
+                    <img src="assets/sertifikat/RH 104 linux fundamental.png" alt="RH 104 Linux Fundamental">
+                    <p>RH 104 Linux Fundamental</p>
+                </div>
+                <div class="cert-card">
+                    <img src="assets/sertifikat/system administration II.png" alt="System Administration II">
+                    <p>System Administration II</p>
+                </div>
+                <div class="cert-card">
+                    <img src="assets/sertifikat/CCSC.png" alt="CCSC">
+                    <p>CCSC</p>
+                </div>
+                <div class="cert-card">
+                    <img src="assets/sertifikat/crypthodraphy.jpg" alt="Cryptography">
+                    <p>Cryptography</p>
+                </div>
+                <div class="cert-card">
+                    <img src="assets/sertifikat/Basic BGP di Juniper.png" alt="Basic BGP di Juniper">
+                    <p>Basic BGP di Juniper</p>
+                </div>
+                <div class="cert-card">
+                    <img src="assets/sertifikat/CSCU Introduction  Securing Email Communication.png" alt="CSCU Securing Email">
+                    <p>CSCU — Securing Email Communication</p>
+                </div>
+                <div class="cert-card">
+                    <img src="assets/sertifikat/Own Your Cloud Journey with Openstack.png" alt="OpenStack Cloud">
+                    <p>Own Your Cloud Journey with OpenStack</p>
+                </div>
+                <div class="cert-card">
+                    <img src="assets/sertifikat/Virtual Machine Fundamental.png" alt="Virtual Machine Fundamental">
+                    <p>Virtual Machine Fundamental</p>
+                </div>
+                <div class="cert-card">
+                    <img src="assets/sertifikat/Reverse Engineering;Bypassing Logic to Reveal the Flag by cyberkarta.jpg" alt="Reverse Engineering">
+                    <p>Reverse Engineering — Bypassing Logic</p>
+                </div>
+                <div class="cert-card">
+                    <img src="assets/sertifikat/web exploitation entracting secrets flags from vulnerable sites.jpg" alt="Web Exploitation">
+                    <p>Web Exploitation</p>
+                </div>
+                <div class="cert-card">
+                    <img src="assets/sertifikat/web exploitation;entracting secrets flags from vulnerable sites by cyberkarta.jpg" alt="Web Exploitation Cyberkarta">
+                    <p>Web Exploitation by Cyberkarta</p>
+                </div>
             </div>
         </div>
     </section>
