@@ -144,3 +144,46 @@ skillFills.forEach(el => {
     el.style.width = "0";
     observer.observe(el);
 });
+
+// Copy email to clipboard
+function copyEmail() {
+    navigator.clipboard.writeText("linggamilan73@gmail.com").then(() => {
+        const btn = document.querySelector(".social-copy");
+        const original = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-check"></i> Tersalin!';
+        btn.classList.add("copied");
+        setTimeout(() => {
+            btn.innerHTML = original;
+            btn.classList.remove("copied");
+        }, 2000);
+    });
+}
+
+// Drag to scroll cert slider
+const slider = document.querySelector(".cert-slider");
+const track = document.querySelector(".cert-track");
+let isDown = false, startX, scrollLeft;
+
+slider.addEventListener("mousedown", e => {
+    isDown = true;
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+});
+slider.addEventListener("mouseleave", () => isDown = false);
+slider.addEventListener("mouseup", () => isDown = false);
+slider.addEventListener("mousemove", e => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    slider.scrollLeft = scrollLeft - (x - startX);
+});
+
+// Touch support
+slider.addEventListener("touchstart", e => {
+    startX = e.touches[0].pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+});
+slider.addEventListener("touchmove", e => {
+    const x = e.touches[0].pageX - slider.offsetLeft;
+    slider.scrollLeft = scrollLeft - (x - startX);
+});
