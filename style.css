@@ -82,6 +82,7 @@ nav a:hover {
     width: 200px;
     height: 200px;
     object-fit: cover;
+    object-position: center top;
     border-radius: 50%;
     border: 4px solid #2a2a2a;
     box-shadow: 0 0 0 6px #111, 0 8px 40px rgba(0,0,0,0.8);
@@ -319,14 +320,94 @@ footer {
     to   { width: var(--w, 0%); }
 }
 
-/* ---- Sertifikat ---- */
-.cert-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+/* ---- Sertifikat slider ---- */
+.cert-slider {
+    overflow-x: auto;
+    overflow-y: hidden;
+    cursor: grab;
+    user-select: none;
+    scrollbar-width: none;
+}
+
+.cert-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.cert-slider:active {
+    cursor: grabbing;
+}
+
+.cert-track {
+    display: flex;
+    gap: 18px;
+    transition: transform 0.3s ease;
+    will-change: transform;
 }
 
 .cert-card {
+    background: rgba(20,20,20,0.7);
+    border: 1px solid #222;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: border-color .3s, box-shadow .3s;
+    backdrop-filter: blur(4px);
+    flex: 0 0 300px;
+}
+
+.cert-card:hover {
+    border-color: #3a3a3a;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+
+.cert-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+}
+
+.cert-card p {
+    padding: 12px 16px;
+    font-size: 13px;
+    color: #aaa;
+    text-align: center;
+}
+
+/* ---- Copy email button ---- */
+.social-copy {
+    padding: 10px 24px;
+    border: 1px solid #2a2a2a;
+    border-radius: 50px;
+    background: rgba(0,0,0,0.4);
+    color: #aaa;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.social-copy:hover {
+    background: #1a1a1a;
+    color: white;
+    border-color: #444;
+}
+
+.social-copy.copied {
+    border-color: #2a7a2a;
+    color: #5fca5f;
+}
+
+/* ---- Project Cards ---- */
+.project-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 30px;
+}
+
+.project-card {
     background: rgba(20,20,20,0.7);
     border: 1px solid #222;
     border-radius: 14px;
@@ -335,22 +416,55 @@ footer {
     backdrop-filter: blur(4px);
 }
 
-.cert-card:hover {
+.project-card:hover {
     transform: translateY(-4px);
     border-color: #3a3a3a;
     box-shadow: 0 8px 24px rgba(0,0,0,0.5);
 }
 
-.cert-card img {
+.project-thumb img {
     width: 100%;
-    height: 200px;
+    height: 180px;
     object-fit: cover;
     display: block;
 }
 
-.cert-card p {
-    padding: 12px 16px;
+.project-info {
+    padding: 16px 18px;
+}
+
+.project-info h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 6px;
+}
+
+.project-link {
     font-size: 13px;
-    color: #aaa;
-    text-align: center;
+    color: #4a90d9;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
+.project-info p {
+    font-size: 13px;
+    color: #777;
+    line-height: 1.6;
+}
+
+.placeholder-thumb {
+    width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    background: #1a1a1a;
+    border-bottom: 1px solid #222;
 }
